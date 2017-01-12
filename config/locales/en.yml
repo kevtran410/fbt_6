@@ -66,6 +66,7 @@ en:
     profile: "Profile"
     sign_out: "Sign out"
     log_in: "Log in"
+    sign_in: "Sign in"
     create: "Create"
     update: "Update"
   flash:

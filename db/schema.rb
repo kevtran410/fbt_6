@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170111171440) do
+ActiveRecord::Schema.define(version: 20170112035550) do
 
   create_table "bookings", force: :cascade do |t|
     t.integer  "person_num"
@@ -69,7 +69,6 @@ ActiveRecord::Schema.define(version: 20170111171440) do
     t.integer  "parent_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
-    t.index ["parent_id"], name: "index_places_on_parent_id"
   end
 
   create_table "reviews", force: :cascade do |t|
@@ -121,6 +120,8 @@ ActiveRecord::Schema.define(version: 20170111171440) do
     t.boolean  "is_admin",           default: false
     t.datetime "created_at",                         null: false
     t.datetime "updated_at",                         null: false
+    t.string   "provider"
+    t.string   "uid"
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 
