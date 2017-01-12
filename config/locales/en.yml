@@ -50,8 +50,29 @@ en:
     sessions:
       new:
         email: "Email:"
+  admin:
+    places:
+      form:
+        name: "Name:"
+        description: "Description:"
+      place:
+        new_child_place: "+"
+        delete_place: "Delete"
+        confirm_delete: "Delete this place will also delete all sub place. Are you sure?"
+      index:
+        new_place: "New place"
   buttons:
     sign_up: "Sign up"
     profile: "Profile"
     sign_out: "Sign out"
     log_in: "Log in"
+    create: "Create"
+    update: "Update"
+  flash:
+    access_denied: "Access denied."
+    place:
+      find_fail: "Place not found!"
+      create_success: "Created new place successfully"
+      update_success: "Updated successfully"
+      destroy_success: "Deleted place successfully"
+      destroy_fail: "Cannot delete place now"

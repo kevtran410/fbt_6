@@ -15,10 +15,13 @@
 //= require turbolinks
 //= require_tree .
 //= require materialize-sprockets
+//= require chosen-jquery
 
 $(document).on('turbolinks:load', function() {
   $(function(){
     $('.button-collapse').sideNav();
     $('.parallax').parallax();
   });
+
+  Materialize.updateTextFields();
 });

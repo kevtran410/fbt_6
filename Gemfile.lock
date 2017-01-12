@@ -43,6 +43,10 @@ GEM
     builder (3.2.2)
     byebug (9.0.6)
     cancancan (1.15.0)
+    chosen-rails (1.5.2)
+      coffee-rails (>= 3.2)
+      railties (>= 3.0)
+      sass-rails (>= 3.2)
     ckeditor (4.2.0)
       cocaine
       orm_adapter (~> 0.5.0)
@@ -227,6 +231,7 @@ PLATFORMS
 DEPENDENCIES
   byebug
   cancancan (~> 1.10)
+  chosen-rails
   ckeditor
   closure_tree
   coffee-rails (~> 4.2)
