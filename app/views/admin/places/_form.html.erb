@@ -1,0 +1,19 @@
+<%= form_for [:admin, @place] do |f| %>
+  <%= f.hidden_field :parent_id %>
+
+  <div class="input-field">
+    <%= f.label :name, t(".name")%>
+    <%= f.text_field :name %>
+  </div>
+
+  <div class="input-field">
+    <%= f.label :description, t(".description") %>
+    <%= f.text_field :description %>
+  </div>
+
+  <% if @place.new_record? %>
+    <%= f.submit t("buttons.create"), class: "btn wave-effects wave-light blue" %>
+  <% else %>
+    <%= f.submit t("buttons.update"), class: "btn wave-effects wave-light orange" %>
+  <% end %>
+<% end %>

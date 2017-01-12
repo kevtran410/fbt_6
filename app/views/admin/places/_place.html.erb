@@ -1,0 +1,5 @@
+<%= link_to place.name, edit_admin_place_path(place) %>
+<%= link_to t(".new_child_place"), admin_new_child_place_path(place) %>
+<%= link_to t(".delete_place"), [:admin, place], method: :delete,
+  data: {confirm: t(".confirm_delete")}%>
+<br>

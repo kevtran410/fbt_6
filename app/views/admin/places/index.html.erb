@@ -1,0 +1,5 @@
+<%= link_to t(".new_place"), new_admin_place_path, class: "btn orange" %>
+<br>
+<% if @places.any? %>
+  <%= place_hierarchy @places %>
+<% end %>
