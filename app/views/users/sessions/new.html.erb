@@ -8,12 +8,21 @@
           <%= f.email_field :email, autofocus: true %>
         </div>
 
-        <div class="input-field">
+        <div class="input-field row">
           <%= f.label t "users.registrations.new.password" %>
           <%= f.password_field :password, autocomplete: "off" %>
         </div>
 
-        <div class="actions">
+        <div class="row">
+          <%= link_to t("buttons.sign_in"),
+            user_facebook_omniauth_authorize_path, class: "facebook right" %>
+
+          <%= link_to t("buttons.sign_in"),
+            user_google_oauth2_omniauth_authorize_path,
+            class: "google left" %>
+        </div>
+
+        <div class="actions row">
           <%= f.submit t("buttons.log_in"),
             class: "btn waves-effect waves-light right" %>
         </div>
