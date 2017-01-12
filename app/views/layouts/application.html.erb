@@ -4,6 +4,8 @@
     <title><%= full_title yield :title %></title>
     <%= render "layouts/rails_default" %>
     <%= render "layouts/shim" %>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
   </head>
 
   <body>
@@ -12,7 +14,7 @@
       <% flash.each do |message_type, message| %>
         <div class="alert alert-<%= message_type %>"><%= message %></div>
       <% end %>
+      <%= yield %>
     </div>
-    <%= yield %>
   </body>
 </html>
