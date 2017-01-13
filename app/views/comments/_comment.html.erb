@@ -1,0 +1,16 @@
+<div class="col s12 comment-content">
+  <section class="row">
+    <h5><strong><%= comment.user.name %>:</strong></h5>
+  </section>
+  <section class="row comment-detail">
+    <%= comment.content %>
+  </section>
+  <section class="row">
+    <button class="btn waves-effect right" data-target="sub-comment-modal">
+      <%= t "buttons.reply" %>
+    </button>
+  </section>
+  <div id="sub-comment-modal">
+
+  </div>
+</div>
