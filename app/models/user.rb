@@ -7,6 +7,8 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable, :validatable,
     :omniauthable, omniauth_providers: [:facebook, :google_oauth2]
 
+  ratyrate_rater
+
   class << self
     def from_omniauth auth
       User.find_or_create_by email: auth.info.email do |user|

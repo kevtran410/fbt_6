@@ -126,6 +126,8 @@ en:
       confirm_button: "OK"
       tour_name: "Tour: %{tour_name}"
       comments_count: "Comments"
+    form:
+      rate_tour: "Rate tour:"
   comments:
     form:
       comment_label: "Your comment"
