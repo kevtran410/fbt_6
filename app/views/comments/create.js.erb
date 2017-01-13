@@ -1,2 +1,4 @@
-$('.comment-list').prepend('<%= j render @comments.order_desc.first %>');
+$('.comment-list').html('<%= j render @supports.comments %>');
 $('.new-comment').html('<%= j render "comments/form" %>');
+$('.comments-count')
+  .html('<%= pluralize @supports.comments.size, t("reviews.show.comments_count") %>')

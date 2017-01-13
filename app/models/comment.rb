@@ -4,7 +4,7 @@ class Comment < ApplicationRecord
 
   has_many :likes, as: :likable
 
-  acts_as_tree
+  acts_as_tree dependent: :delete_all, order: "created_at DESC"
 
   validates :content, presence: true
 

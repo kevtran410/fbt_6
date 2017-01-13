@@ -6,11 +6,16 @@
     <%= comment.content %>
   </section>
   <section class="row">
-    <button class="btn waves-effect right" data-target="sub-comment-modal">
-      <%= t "buttons.reply" %>
-    </button>
+    <%= link_to t("buttons.reply"),
+      tour_review_new_comment_path(@tour, @review, comment), remote: true,
+      class: "btn waves-effect right" %>
+    <%= link_to pluralize(comment.children.size,
+      t("reviews.show.comments_count")),
+      tour_review_show_sub_comment_path(@tour, @review, comment), remote: true %>
   </section>
-  <div id="sub-comment-modal">
-
+</div>
+<div id="sub-comment" class="row">
+  <div id="sub-comment-form-<%= comment.id %>"></div>
+  <div id="sub-comment-content-<%= comment.id %>" class="col s12 right">
   </div>
 </div>

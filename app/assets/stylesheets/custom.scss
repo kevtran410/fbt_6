@@ -144,7 +144,18 @@ p {
 
 .comment-content {
   margin-top: 60px;
-  padding: 30px;
+  padding: 0px 20px;
+  background: snow;
+  border: wheat 1px solid;
+  .comment-detail {
+    word-wrap: break-word;
+  }
+}
+
+.sub-comment-content {
+  margin-left: 20px;
+  margin-top: 5px;
+  padding: 0px 20px;
   background: snow;
   border: wheat 1px solid;
   .comment-detail {

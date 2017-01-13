@@ -1,0 +1,10 @@
+<% @supports.parent_comment.children.each do |child_comment| %>
+  <div class="sub-comment-content">
+    <section class="row">
+      <h5><strong><%= child_comment.user.name %>:</strong></h5>
+    </section>
+    <section class="row comment-detail">
+      <%= child_comment.content %>
+    </section>
+  </div>
+<% end %>
