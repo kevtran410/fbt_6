@@ -16,6 +16,7 @@
 //= require_tree .
 //= require materialize-sprockets
 //= require chosen-jquery
+//= require ckeditor/init
 
 $(document).on('turbolinks:load', function() {
   $(function(){

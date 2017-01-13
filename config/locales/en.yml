@@ -77,3 +77,12 @@ en:
       update_success: "Updated successfully"
       destroy_success: "Deleted place successfully"
       destroy_fail: "Cannot delete place now"
+    review:
+      create_sucess: "Create new review successful!"
+  tours:
+    show:
+      create_review: "Create new review"
+  reviews:
+    new:
+      review_name: "Review title:"
+      post_review_btn: "Post"
