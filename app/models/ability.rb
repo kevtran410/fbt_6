@@ -6,7 +6,7 @@ class Ability
     if user.is_admin?
       can :manage, Place
     else
-      can [:read, :create], Review
+      can :manage, Review
     end
   end
 end
