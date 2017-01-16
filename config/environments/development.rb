@@ -55,4 +55,15 @@ Rails.application.configure do
   ENV["FACEBOOK_SECRET"] = "29f25bd68e1e1670ad0abe4c17ed440b"
   ENV["GOOGLE_ID"] = "843226520230-j8tftq46e7eegvb1mdjn13q7pkn668m2.apps.googleusercontent.com"
   ENV["GOOGLE_SECRET"] = "9TrDsh0sUMFQpxU8s9DZRhwz"
+  config.action_mailer.default_url_options = {host: "localhost:3000"}
+  config.action_mailer.delivery_method = :smtp
+  ActionMailer::Base.smtp_settings = {
+    address: "smtp.gmail.com",
+    domain: "mail.google.com",
+    port: 587,
+    user_name: ENV["GMAIL_USERNAME"],
+    password: ENV["GMAIL_PASSWORD"],
+    authentication: :plain,
+    enable_starttls_auto: true
+  }
 end
