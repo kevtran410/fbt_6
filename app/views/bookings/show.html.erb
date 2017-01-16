@@ -1,0 +1,21 @@
+<%= t ".email", email: @booking.email %>
+<br>
+<%= t ".phone", phone: @booking.phone %>
+<br>
+<%= t ".tour", tour: @booking.tour_option.tour.name %>
+<br>
+<%= t ".start_date", date: @booking.tour_option.start_date %>
+<br>
+<%= t ".person_num", num: @booking.person_num %>
+<br>
+<%= t ".total_price", price: @booking.total_price %>
+<br>
+
+<%= t ".#{@booking.status}_message" %>
+<br>
+<% if @booking.accepted? %>
+  <%= render "charges/form", booking: @booking %>
+<% elsif @booking.paid? %>
+  <%= link_to t("buttons.cancel"), charge_path(@booking), method: :patch,
+    class: "btn red", data: {confirm: t(".confirm_cancel_warning")} %>
+<% end %>

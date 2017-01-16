@@ -1,0 +1,20 @@
+<%= form_tag charges_path, id: "charge-form" do %>
+  <% if flash[:error].present? %>
+    <div id="error_explanation">
+      <p><%= flash[:error] %></p>
+    </div>
+  <% end %>
+
+  <%= hidden_field_tag :booking_id, booking.id %>
+
+  <%= hidden_field_tag :stripe_key,
+    Rails.configuration.stripe[:publishable_key] %>
+  <%= hidden_field_tag :stripe_token %>
+  <%= hidden_field_tag :stripe_email %>
+
+  <span id="charge-button" class="btn orange"
+    data-amount="<%= booking.total_price %>"
+    data-locale="auto">
+      <%= t "buttons.pay_with_card" %>
+  </span>
+<% end %>

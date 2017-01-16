@@ -2,6 +2,6 @@
 <br>
 <%= t "mailer.#{@booking.status}_message" %>
 <br>
-<%= link_to t("mailer.#{@booking.status}_link_text"), "#" %>
+<%= link_to t("mailer.#{@booking.status}_link_text"), booking_url(@booking) %>
 <br>
 <%= t "mailer.best_regard" %>

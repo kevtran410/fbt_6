@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170117030916) do
+ActiveRecord::Schema.define(version: 20170118232210) do
 
   create_table "average_caches", force: :cascade do |t|
     t.integer  "rater_id"
@@ -31,6 +31,7 @@ ActiveRecord::Schema.define(version: 20170117030916) do
     t.integer  "tour_option_id"
     t.datetime "created_at",                 null: false
     t.datetime "updated_at",                 null: false
+    t.string   "charge_id"
     t.index ["tour_option_id"], name: "index_bookings_on_tour_option_id"
     t.index ["user_id"], name: "index_bookings_on_user_id"
   end
@@ -97,19 +98,19 @@ ActiveRecord::Schema.define(version: 20170117030916) do
   end
 
   create_table "places", force: :cascade do |t|
-    t.string "name"
-    t.string "description"
-    t.integer "parent_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string   "name"
+    t.string   "description"
+    t.integer  "parent_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   create_table "rates", force: :cascade do |t|
-    t.integer "rater_id"
-    t.string "rateable_type"
-    t.integer "rateable_id"
-    t.float "stars", null: false
-    t.string "dimension"
+    t.integer  "rater_id"
+    t.string   "rateable_type"
+    t.integer  "rateable_id"
+    t.float    "stars",         null: false
+    t.string   "dimension"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.index ["rateable_id", "rateable_type"], name: "index_rates_on_rateable_id_and_rateable_type"
@@ -117,11 +118,11 @@ ActiveRecord::Schema.define(version: 20170117030916) do
   end
 
   create_table "rating_caches", force: :cascade do |t|
-    t.string "cacheable_type"
-    t.integer "cacheable_id"
-    t.float "avg", null: false
-    t.integer "qty", null: false
-    t.string "dimension"
+    t.string   "cacheable_type"
+    t.integer  "cacheable_id"
+    t.float    "avg",            null: false
+    t.integer  "qty",            null: false
+    t.string   "dimension"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.index ["cacheable_id", "cacheable_type"], name: "index_rating_caches_on_cacheable_id_and_cacheable_type"

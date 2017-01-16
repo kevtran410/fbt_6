@@ -106,6 +106,7 @@ en:
     accept: "Accept"
     decline: "Decline"
     unlike: "Unlike"
+    pay_with_card: "Pay with card"
   flash:
     access_denied: "Access denied."
     place:
@@ -179,6 +180,19 @@ en:
       email: "Email:"
       phone: "Phone:"
       person_num: "Number of people:"
+    show:
+      email: "Email: %{email}"
+      phone: "Phone number: %{phone}"
+      tour: "Tour: %{tour}"
+      start_date: "Start date: %{date}"
+      person_num: "Number of people: %{num}"
+      total_price: "Total price (in USD): %{price}"
+      accepted_message: "Your booking has been accepted, you can pay now."
+      declined_message: "Your booking request has been declined"
+      canceled_message: "Your booking request is canceled"
+      pending_message: "Your booking request is pending"
+      paid_message: "Your booking has been paid."
+      confirm_cancel_warning: "Are you sure you want to cancel? You will have only 70% of your money back."
   mailer:
     dear: "Dear %{name},"
     best_regard: "Best regard."
@@ -191,3 +205,5 @@ en:
     accepted_link_text: "Click here to pay for your booking."
     declined_link_text: "Click here to see declined booking"
     canceled_link_text: "Click here to see canceled booking"
+  charges:
+    form_name: "Card information"

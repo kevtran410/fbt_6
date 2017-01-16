@@ -72,5 +72,24 @@ $(document).on('turbolinks:load', function() {
     var tmp = $(this).parent().parent();
     tmp.find('#accept').remove();
     tmp.find('form').submit();
-  })
+  });
+
+  var chargeBtn = $('#charge-button');
+  if (chargeBtn.length) {
+    var handler = StripeCheckout.configure({
+      key: $('#stripe_key').val(),
+      token: function(token, args) {
+        $('#stripe_token').val(token.id);
+        $('#stripe_email').val(token.email);
+        $('#charge-form').submit();
+      }
+    });
+    chargeBtn.on('click', function (e) {
+      e.preventDefault();
+      handler.open({
+        name: I18n.t('charges.form_name'),
+        amount: $(this).data('amount') * 100
+      });
+    });
+  }
 });

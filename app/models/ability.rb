@@ -9,6 +9,9 @@ class Ability
       can :manage, Review
       can :manage, Comment
       can :create, Booking
+      can :read, Booking do |booking|
+        booking.user == user
+      end
       can :manage, Like
     end
   end

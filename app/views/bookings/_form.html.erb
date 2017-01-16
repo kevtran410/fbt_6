@@ -2,12 +2,14 @@
 
   <div class="input-field">
     <%= f.label :email, t(".email") %>
-    <%= f.email_field :email, value: current_user.email %>
+    <%= f.email_field :email,
+      value: current_user.nil? ? "" : current_user.email %>
   </div>
 
   <div class="input-field">
     <%= f.label :phone, t(".phone") %>
-    <%= f.text_field :phone, value: current_user.phone %>
+    <%= f.text_field :phone,
+      value: current_user.nil? ? "" : current_user.phone %>
   </div>
 
   <div class="input-field">
