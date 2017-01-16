@@ -8,4 +8,8 @@ Rails.application.routes.draw do
     resources :places, except: :show
     get "places/new/(:parent_id)", to: "places#new", as: "new_child_place"
   end
+
+  resources :tours, only: :show do
+    resources :reviews, only: [:new, :create]
+  end
 end

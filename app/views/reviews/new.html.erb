@@ -1,0 +1,17 @@
+<div class="row">
+  <h3><%= @tour.name %></h3>
+</div>
+<div class="row col s12">
+  <%= form_for [@tour, @review] do |f| %>
+    <div class="input-field">
+      <%= f.label t ".review_name"  %>
+      <%= f.text_field :name, autofocus: true %>
+    </div>
+    <div class="">
+      <%= f.label :content %>
+      <%= f.cktext_area :content, ckeditor: {language: "us"} %>
+    </div><br>
+    <%= f.submit t(".post_review_btn"),
+      class: "btn waves-effect waves-light right" %>
+  <% end %>
+</div>
