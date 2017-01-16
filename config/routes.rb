@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  mount Ckeditor::Engine => "/ckeditor"
   root "static_pages#show", page_name: "home"
   get "/pages/:page_name" => "static_pages#show", as: :page
 
@@ -7,6 +8,7 @@ Rails.application.routes.draw do
   namespace :admin do
     resources :places, except: :show
     get "places/new/(:parent_id)", to: "places#new", as: "new_child_place"
+    resources :tours
   end
 
   resources :tours, only: :show do

@@ -61,6 +61,19 @@ en:
         confirm_delete: "Delete this place will also delete all sub place. Are you sure?"
       index:
         new_place: "New place"
+    tours:
+      form:
+        name: "Tour name"
+        duration: "Duration (days)"
+        price: "Price (USD)"
+        add_option: "Add option"
+        add_place: "Add place"
+        tour_options: "Tour options:"
+        tour_places: "Tour places:"
+      show:
+        confirm_delete: "Are you sure you want to delete this tour?"
+      index:
+        new_tour: "Create new tour"
   buttons:
     sign_up: "Sign up"
     profile: "Profile"
@@ -76,6 +89,9 @@ en:
     like: "like"
     comment: "Leave your comment"
     reply: "Reply"
+    remove: "Remove"
+    delete: "Delete"
+    edit: "Edit"
   flash:
     access_denied: "Access denied."
     place:
@@ -104,3 +120,10 @@ en:
   comments:
     form:
       comment_label: "Your comment"
+    tour:
+      find_fail: "Tour not found"
+      destroy_success: "Deleted tour successfully."
+      destroy_fail: "Cannot delete tour now"
+  js:
+    alert:
+      remove_tour_item: "Cannot remove anymore"

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170112035550) do
+ActiveRecord::Schema.define(version: 20170112160628) do
 
   create_table "bookings", force: :cascade do |t|
     t.integer  "person_num"
@@ -24,6 +24,22 @@ ActiveRecord::Schema.define(version: 20170112035550) do
     t.datetime "updated_at",                 null: false
     t.index ["tour_option_id"], name: "index_bookings_on_tour_option_id"
     t.index ["user_id"], name: "index_bookings_on_user_id"
+  end
+
+  create_table "ckeditor_assets", force: :cascade do |t|
+    t.string   "data_file_name",               null: false
+    t.string   "data_content_type"
+    t.integer  "data_file_size"
+    t.string   "data_fingerprint"
+    t.integer  "assetable_id"
+    t.string   "assetable_type",    limit: 30
+    t.string   "type",              limit: 30
+    t.integer  "width"
+    t.integer  "height"
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
+    t.index ["assetable_type", "assetable_id"], name: "idx_ckeditor_assetable"
+    t.index ["assetable_type", "type", "assetable_id"], name: "idx_ckeditor_assetable_type"
   end
 
   create_table "comment_hierarchies", id: false, force: :cascade do |t|
@@ -72,8 +88,7 @@ ActiveRecord::Schema.define(version: 20170112035550) do
   end
 
   create_table "reviews", force: :cascade do |t|
-    t.string   "name"
-    t.text     "content"
+    t.string   "content"
     t.integer  "user_id"
     t.integer  "tour_id"
     t.datetime "created_at", null: false
@@ -107,6 +122,7 @@ ActiveRecord::Schema.define(version: 20170112035550) do
     t.integer  "duration"
     t.float    "price"
     t.float    "rating"
+    t.text     "content"
     t.integer  "status",     default: 0
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
