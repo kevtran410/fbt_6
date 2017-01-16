@@ -1,0 +1,35 @@
+<div class="col s12">
+  <% if current_user == @review.user %>
+    <section class="right">
+      <%= link_to(edit_tour_review_path(@tour, @review),
+        class: "btn-floating btn-large waves-effect green") do %>
+        <i class="material-icons">edit</i>
+      <% end %>
+      <button data-target="modal1" class="btn-floating btn-large red">
+        <i class="material-icons">delete</i>
+      </button>
+    </section>
+  <% end %>
+  <div id="modal1" class="modal">
+    <div class="modal-content">
+      <h4><%= t ".confirm_delete_review" %></h4>
+      <p><%= t ".confirm_delete_review_content" %></p>
+    </div>
+    <div class="modal-footer">
+      <%= link_to t("buttons.cancel"), tour_review_path(@tour, @review),
+        class: "modal-action modal-close waves-effect waves-green btn-flat" %>
+      <%= link_to t(".confirm_button"), tour_review_path(@tour, @review),
+        method: :delete,
+        class: "modal-action modal-close waves-effect waves-green btn-flat" %>
+    </div>
+  </div>
+  <h3><Strong><%= @review.name %></Strong></h3>
+  <h5>
+    <%= link_to t(".tour_name", tour_name: @tour.name), tour_path(@tour) %>
+  </h5>
+  <h6 class="left"><%= @review.user.name %></h6>
+  <h6 class="right"><%= @review.created_at %></h6>
+</div><br>
+<div class="col s12">
+  <%= raw @review.content %>
+</div>

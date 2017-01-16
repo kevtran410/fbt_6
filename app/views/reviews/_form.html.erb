@@ -1,0 +1,12 @@
+<%= form_for [@tour, @review] do |f| %>
+  <div class="input-field">
+    <%= f.label t "reviews.new.review_name"  %>
+    <%= f.text_field :name, autofocus: true %>
+  </div>
+  <div>
+    <%= f.label :content %>
+    <%= f.cktext_area :content, ckeditor: {language: "us"} %>
+  </div><br>
+  <%= f.submit yield(:button_text),
+    class: "btn waves-effect waves-light right" %>
+<% end %>

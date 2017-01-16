@@ -69,6 +69,10 @@ en:
     sign_in: "Sign in"
     create: "Create"
     update: "Update"
+    post_review: "Post"
+    edit_review: "Save"
+    cancel: "Cancel"
+    read_more: "Read more"
   flash:
     access_denied: "Access denied."
     place:
@@ -79,10 +83,15 @@ en:
       destroy_fail: "Cannot delete place now"
     review:
       create_sucess: "Create new review successful!"
+      destroy_success: "Review deleted!"
   tours:
     show:
       create_review: "Create new review"
   reviews:
     new:
       review_name: "Review title:"
-      post_review_btn: "Post"
+    show:
+      confirm_delete_review: "Are you sure?"
+      confirm_delete_review_content: "OK to delete or CANCEL."
+      confirm_button: "OK"
+      tour_name: "Tour: %{tour_name}"

@@ -14,6 +14,25 @@ class ReviewsController < ApplicationController
       render :new
     end
   end
+  
+  def show
+  end
+
+  def edit
+  end
+
+  def update
+    if @review.update_attributes review_params
+      flash[:success] = t "flash.place.update_success"
+      redirect_to tour_review_path @tour, @review
+    end
+  end
+
+  def destroy
+    @review.destroy
+    flash[:success] = t "flash.review.destroy_success"
+    redirect_to tour_path @tour
+  end
 
   private
   def review_params
