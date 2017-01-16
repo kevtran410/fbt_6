@@ -1,12 +1,16 @@
 <div class="row">
+  <%= render "bookings/form", tour: @tour, booking: @booking %>
+</div>
+
+<div class="row">
   <%= link_to t(".create_review"), new_tour_review_path(@tour),
     class: "btn right" %>
 </div>
 
 <div class="row">
   <ul class="collapsible" data-collapsible="expandable">
-    <% if @reviews.any? %>
-      <% @reviews.each do |review| %>
+    <% if @tour.reviews.any? %>
+      <% @tour.reviews.each do |review| %>
         <li>
           <div class="collapsible-header">
             <h5><%= review.name %></h5>

@@ -1,0 +1,17 @@
+<% if @bookings.any? %>
+  <table class="responsive-table highlight">
+    <thead>
+      <tr>
+        <th><%= t ".email" %></th>
+        <th><%= t ".phone" %></th>
+        <th><%= t ".status" %></th>
+        <th><%= t ".tour" %></th>
+        <th><%= t ".tour_option" %></th>
+      </tr>
+    </thead>
+    <tbody>
+      <%= render @bookings %>
+    </tbody>
+  </table>
+
+<% end %>

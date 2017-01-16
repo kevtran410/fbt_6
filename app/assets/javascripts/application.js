@@ -67,4 +67,10 @@ $(document).on('turbolinks:load', function() {
   });
 
   $('select').material_select();
+
+  $('.btn-decline').on('click', function () {
+    var tmp = $(this).parent().parent();
+    tmp.find('#accept').remove();
+    tmp.find('form').submit();
+  })
 });
