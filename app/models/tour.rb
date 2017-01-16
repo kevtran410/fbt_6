@@ -1,6 +1,16 @@
 class Tour < ApplicationRecord
-  has_many :tour_places
+  has_many :tour_places, inverse_of: :tour
   has_many :places, through: :tour_places
-  has_many :tour_options, dependent: :destroy
+  has_many :tour_options, dependent: :destroy, inverse_of: :tour
   has_many :reviews, dependent: :destroy
+
+  validates :name, presence: true
+  validates :content, presence: true
+  validates :duration, presence: true, numericality: {only_integer: true}
+  validates :price, presence: true, numericality: true
+
+  accepts_nested_attributes_for :tour_options, allow_destroy: true,
+    reject_if: lambda {|attribute| attribute[:start_date].blank?}
+  accepts_nested_attributes_for :tour_places, allow_destroy: true,
+    reject_if: lambda {|attribute| attribute[:place_id].blank?}
 end

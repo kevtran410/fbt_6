@@ -17,6 +17,9 @@
 //= require materialize-sprockets
 //= require chosen-jquery
 //= require ckeditor/init
+//= require i18n
+//= require i18n.js
+//= require i18n/translations
 
 $(document).on('turbolinks:load', function() {
   $(function(){
