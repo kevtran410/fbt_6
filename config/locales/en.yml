@@ -106,6 +106,14 @@ en:
     comment:
       comment_success: "Comment success!"
       comment_fail: "Can't post your comment"
+    tour:
+      update_failed: "Cannot save tour"
+      create_failed: "Failed to create new tour"
+      destroy_success: "Deleted tour successfully"
+      destroy_fail: "Cannot delete tour right now"
+      create_success: "Create new tour successfully"
+      update_success: "Updated tour successfully"
+      find_fail: "Tour not found"
   tours:
     show:
       create_review: "Create new review"
@@ -127,3 +135,5 @@ en:
   js:
     alert:
       remove_tour_item: "Cannot remove anymore"
+  datepicker:
+    format: "dd-mm-yyyy"

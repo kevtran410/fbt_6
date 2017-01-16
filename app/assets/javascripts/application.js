@@ -30,4 +30,30 @@ $(document).on('turbolinks:load', function() {
   Materialize.updateTextFields();
 
   $('.modal').modal();
+
+  $('.admin-tour-form').on('click', '.btn-add-field', function (e) {
+    e.preventDefault();
+    time = new Date().getTime();
+    regexp = new RegExp($(this).data("id"), "g");
+    $(this).before($(this).data("fields").replace(regexp, time));
+    $('.datepicker').pickadate({
+      format: I18n.t('datepicker.format')
+    });
+    $('select').material_select();
+  }).on('click', '.btn-remove-field', function () {
+    var count = $(this).parent().parent().
+      siblings('.nested-tour-item:visible').length + 1;
+    if (count <= 1) {
+      alert(I18n.t('js.alert.remove_tour_item'));
+    } else {
+      $(this).prev('input[type=hidden]').val('1');
+      $(this).parent().parent().hide();
+    }
+  });
+
+  $('.datepicker').pickadate({
+    format: I18n.t('datepicker.format')
+  });
+
+  $('select').material_select();
 });

@@ -1,0 +1,44 @@
+<div class="admin-tour-form">
+  <%= form_for [:admin, @tour] do |f| %>
+    <div class="input-field">
+      <%= f.label :name, t(".name") %>
+      <%= f.text_field :name %>
+    </div>
+
+    <div class="input-field">
+      <%= f.label :duration, t(".duration") %>
+      <%= f.text_field :duration %>
+    </div>
+
+    <div class="input-field">
+      <%= f.label :price, t(".price") %>
+      <%= f.text_field :price %>
+    </div>
+
+    <div id="nested-tour-options">
+      <%= t ".tour_options" %>
+      <%= f.fields_for :tour_options do |builder| %>
+        <%= render "tour_option_field", f: builder %>
+      <% end %>
+      <%= btn_add_field t(".add_option"), f, :tour_options %>
+    </div>
+
+    <div id="nested-tour-places">
+      <%= t ".tour_places" %>
+      <%= f.fields_for :tour_places do |builder| %>
+        <%= render "tour_place_field", f: builder %>
+      <% end %>
+      <%= btn_add_field t(".add_place"), f, :tour_places %>
+    </div>
+
+    <%= f.cktext_area :content %>
+
+    <% if @tour.new_record? %>
+      <%= f.submit t("buttons.create"),
+        class: "btn wave-effects wave-light blue" %>
+    <% else %>
+      <%= f.submit t("buttons.update"),
+        class: "btn wave-effects wave-light orange" %>
+    <% end %>
+  <% end %>
+</div>

@@ -1,0 +1,3 @@
+<%= link_to t("buttons.delete"), [:admin, @tour], method: :delete,
+  data: {confirm: t(".confirm_delete")} %>
+<%= @tour.content.html_safe %>

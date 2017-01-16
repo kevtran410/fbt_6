@@ -1,0 +1,9 @@
+<div class="nested-tour-item">
+  <div class="input-field">
+    <%= f.collection_select :place_id, @places, :id, :name %>
+    <%= f.hidden_field :_destroy %>
+    <span class="btn red btn-remove-field">
+      <%= t "buttons.remove" %>
+    </span>
+  </div>
+</div>
