@@ -32,4 +32,28 @@
 </div><br>
 <div class="col s12">
   <%= raw @review.content %>
-</div>
+</div><br>
+<section class="col s12 divider"></section><br>
+<div class="col s12">
+  <section class="right">
+    <% if user_signed_in? %>
+      <button data-target="modal-comment" class="btn btn-large waves-effect red">
+        <%= t "buttons.comment" %>
+      </button>
+      <%= link_to("",
+        class: "btn btn-large waves-effect blue") do %>
+        <i class="material-icons left">thumb_up</i><%= t "buttons.like" %>
+      <% end %>
+    <% end %>
+  </section>
+  <div id="modal-comment" class="modal">
+    <div class="new-comment">
+      <%= render "comments/form" %>
+    </div>
+  </div>
+</div><br>
+<% if @comments.any? %>
+  <div class="comment-list">
+    <%= render @comments.order_desc %>
+  </div>
+<% end %>

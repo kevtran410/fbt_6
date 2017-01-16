@@ -14,8 +14,10 @@ class ReviewsController < ApplicationController
       render :new
     end
   end
-  
+
   def show
+    @comments = @review.comments.order_desc
+    @comment = @review.comments.build
   end
 
   def edit
@@ -33,7 +35,7 @@ class ReviewsController < ApplicationController
     flash[:success] = t "flash.review.destroy_success"
     redirect_to tour_path @tour
   end
-
+  
   private
   def review_params
     params.require(:review).permit :name, :content, :tour_id

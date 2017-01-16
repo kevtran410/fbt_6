@@ -1,0 +1,2 @@
+$('.comment-list').prepend('<%= j render @comments.order_desc.first %>');
+$('.new-comment').html('<%= j render "comments/form" %>');

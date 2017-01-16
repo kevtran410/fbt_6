@@ -65,16 +65,19 @@ p {
   color: #ffffff;
   text-decoration: none;
 }
+
 .facebook:hover,
 .facebook:focus {
   background: #37528c;
   color: #ffffff;
   text-decoration: none;
 }
+
 .facebook:active {
   background: #1ca4d6;
 }
-.facebook:before{
+
+.facebook:before {
   content: "\0000a0";
   display: inline-block;
   height: 50px;
@@ -85,8 +88,7 @@ p {
   padding-left: 10px;
   top: -10px;
   left: -10px;
-  background: url("http://i.imgur.com/0bcxkOD.png")
-  no-repeat center center #37528c;
+  background: url("http://i.imgur.com/0bcxkOD.png") no-repeat center center #37528c;
   background-size: 13px 24px;
   -webkit-border-radius: 8px 0px 0px 8px;
   -moz-border-radius: 8px 0px 0px 8px;
@@ -94,6 +96,7 @@ p {
   -ms-border-radius: 8px 0px 0px 8px;
   border-radius: 8px 0px 0px 8px;
 }
+
 .google {
   display: inline-block;
   text-align: center;
@@ -103,19 +106,22 @@ p {
   padding-top: 10px;
   background: #d34836;
   font-family: 'Open Sans', sans-serif;
-  font-weight:700;
+  font-weight: 700;
   color: #ffffff;
   text-decoration: none;
 }
+
 .google:hover,
 .google:focus {
   background: #c74534;
   color: #ffffff;
   text-decoration: none;
 }
+
 .google:active {
   background: #1ca4d6;
 }
+
 .google:before {
   content: "\0000a0";
   display: inline-block;
@@ -134,4 +140,14 @@ p {
   -o-border-radius: 8px 0px 0px 8px;
   -ms-border-radius: 8px 0px 0px 8px;
   border-radius: 8px 0px 0px 8px;
+}
+
+.comment-content {
+  margin-top: 60px;
+  padding: 30px;
+  background: snow;
+  border: wheat 1px solid;
+  .comment-detail {
+    word-wrap: break-word;
+  }
 }

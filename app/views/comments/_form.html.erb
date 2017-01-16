@@ -1,0 +1,16 @@
+<div>
+  <% if user_signed_in? %>
+    <%= form_for [@tour, @review, @comment], remote: true do |f| %>
+      <div class="modal-content">
+        <div class="input-field">
+          <%= f.label t ".comment_label" %>
+          <%= f.text_field :content, autofocus: true %>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <%= f.submit t("buttons.post_review"),
+          class: "modal-action modal-close waves-effect waves-green btn-flat" %>
+      </div>
+    <% end %>
+  <% end %>
+</div>

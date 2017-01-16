@@ -73,6 +73,9 @@ en:
     edit_review: "Save"
     cancel: "Cancel"
     read_more: "Read more"
+    like: "like"
+    comment: "Leave your comment"
+    reply: "Reply"
   flash:
     access_denied: "Access denied."
     place:
@@ -84,6 +87,9 @@ en:
     review:
       create_sucess: "Create new review successful!"
       destroy_success: "Review deleted!"
+    comment:
+      comment_success: "Comment success!"
+      comment_fail: "Can't post your comment"
   tours:
     show:
       create_review: "Create new review"
@@ -95,3 +101,6 @@ en:
       confirm_delete_review_content: "OK to delete or CANCEL."
       confirm_button: "OK"
       tour_name: "Tour: %{tour_name}"
+  comments:
+    form:
+      comment_label: "Your comment"
