@@ -1,0 +1,5 @@
+<%= link_to t(".new_tour"), new_admin_tour_path, class: "btn orange" %>
+<br>
+<% if @tours.any? %>
+  <%= render @tours %>
+<% end %>
