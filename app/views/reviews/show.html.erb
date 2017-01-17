@@ -46,14 +46,19 @@
       <% end %>
     <% end %>
   </section>
+  <section class="left">
+    <h5><strong class="comments-count">
+      <%= pluralize @supports.comments.size, t("reviews.show.comments_count") %>
+    </strong></h5>
+  </section>
   <div id="modal-comment" class="modal">
     <div class="new-comment">
       <%= render "comments/form" %>
     </div>
   </div>
 </div><br>
-<% if @comments.any? %>
-  <div class="comment-list">
-    <%= render @comments.order_desc %>
-  </div>
-<% end %>
+<div class="comment-list">
+  <% if @supports.comments.any? %>
+    <%= render @supports.comments %>
+  <% end %>
+</div>

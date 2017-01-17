@@ -16,8 +16,7 @@ class ReviewsController < ApplicationController
   end
 
   def show
-    @comments = @review.comments.order_desc
-    @comment = @review.comments.build
+    @supports = Supports::ReviewSupport.new review: @review, user: current_user
   end
 
   def edit

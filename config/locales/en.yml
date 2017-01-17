@@ -125,6 +125,7 @@ en:
       confirm_delete_review_content: "OK to delete or CANCEL."
       confirm_button: "OK"
       tour_name: "Tour: %{tour_name}"
+      comments_count: "Comments"
   comments:
     form:
       comment_label: "Your comment"

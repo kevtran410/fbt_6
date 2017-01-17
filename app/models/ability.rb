@@ -7,7 +7,7 @@ class Ability
       can :manage, [Place, Tour]
     else
       can :manage, Review
-      can [:read, :create], Comment
+      can :manage, Comment
     end
   end
 end

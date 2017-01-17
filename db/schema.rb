@@ -88,7 +88,8 @@ ActiveRecord::Schema.define(version: 20170112160628) do
   end
 
   create_table "reviews", force: :cascade do |t|
-    t.string   "content"
+    t.string   "name"
+    t.text     "content"
     t.integer  "user_id"
     t.integer  "tour_id"
     t.datetime "created_at", null: false
@@ -122,7 +123,6 @@ ActiveRecord::Schema.define(version: 20170112160628) do
     t.integer  "duration"
     t.float    "price"
     t.float    "rating"
-    t.text     "content"
     t.integer  "status",     default: 0
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
