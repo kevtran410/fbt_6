@@ -16,6 +16,7 @@ Rails.application.routes.draw do
   resources :tours, only: :show do
     resources :reviews do
       resources :comments, only: :create
+      resources :likes, only: [:create, :destroy]
       get "/comments/new/(:parent_id)", to: "comments#new", as: :new_comment
       get "/comments/(:parent_id)", to: "comments#show",
         as: :show_sub_comment

@@ -2,12 +2,16 @@ class User < ApplicationRecord
   has_many :bookings
   has_many :reviews
   has_many :comments
-  has_many :likes, as: :likable
+  has_many :likes
 
   devise :database_authenticatable, :registerable, :validatable,
     :omniauthable, omniauth_providers: [:facebook, :google_oauth2]
 
   ratyrate_rater
+
+  def liked? target
+    self.likes.find_by(likable_id: target.id).present?
+  end
 
   class << self
     def from_omniauth auth

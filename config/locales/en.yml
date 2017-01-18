@@ -102,6 +102,7 @@ en:
     book: "Book"
     accept: "Accept"
     decline: "Decline"
+    unlike: "Unlike"
   flash:
     access_denied: "Access denied."
     place:
@@ -113,6 +114,10 @@ en:
     review:
       create_sucess: "Create new review successful!"
       destroy_success: "Review deleted!"
+      like_success: "You liked this review"
+      like_fail: "Like fail!"
+      unlike_success: "Unlike review"
+      unlike_fail: "Unlike fail!"
     comment:
       comment_success: "Comment success!"
       comment_fail: "Can't post your comment"
@@ -141,6 +146,7 @@ en:
       confirm_button: "OK"
       tour_name: "Tour: %{tour_name}"
       comments_count: "Comments"
+      likes: "Likes"
     form:
       rate_tour: "Rate tour:"
   comments:

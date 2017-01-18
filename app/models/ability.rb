@@ -9,6 +9,7 @@ class Ability
       can :manage, Review
       can :manage, Comment
       can :create, Booking
+      can :manage, Like
     end
   end
 end
