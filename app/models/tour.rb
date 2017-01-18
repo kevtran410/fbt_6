@@ -17,4 +17,6 @@ class Tour < ApplicationRecord
     reject_if: lambda {|attribute| attribute[:start_date].blank?}
   accepts_nested_attributes_for :tour_places, allow_destroy: true,
     reject_if: lambda {|attribute| attribute[:place_id].blank?}
+
+  ratyrate_rateable "quality"
 end

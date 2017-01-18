@@ -27,9 +27,12 @@
   <h5>
     <%= link_to t(".tour_name", tour_name: @tour.name), tour_path(@tour) %>
   </h5>
+  <%= rating_for_user @tour, @review.user, "quality", {target: "#hint-div"} %>
+  <div id="hint-div"></div>
   <h6 class="left"><%= @review.user.name %></h6>
   <h6 class="right"><%= @review.created_at %></h6>
-</div><br>
+</div><br><br>
+<section class="col s12 divider"></section><br>
 <div class="col s12">
   <%= raw @review.content %>
 </div><br>

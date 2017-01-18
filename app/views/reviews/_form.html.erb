@@ -3,6 +3,8 @@
     <%= f.label t "reviews.new.review_name"  %>
     <%= f.text_field :name, autofocus: true %>
   </div>
+  <%= t ".rate_tour" %>
+  <%= rating_for @tour, "quality", star: 5, disable_after_rate: false %>
   <div>
     <%= f.label :content %>
     <%= f.cktext_area :content, ckeditor: {language: "us"} %>
