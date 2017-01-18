@@ -24,6 +24,64 @@
   </div>
 </div>
 
+<div>
+  <div class="section">
+    <div class="row">
+      <h3 class="center brown-text"><%= t ".discover_our_tour" %></h3>
+    </div>
+    <div class="row">
+      <% if @tours.any? %>
+        <ul class="bxslider">
+          <% @tours.each do |tour| %>
+            <li>
+              <div class="col s12">
+                <div class="card medium sticky-action">
+                  <div class="card-image waves-effect waves-block waves-light">
+                    <img class="activator"
+                      src="http://noticeapp.co/ca/img/background3.jpg">
+                  </div>
+                  <div class="card-content">
+                    <span class="card-title activator grey-text text-darken-4">
+                      <%= tour.name %>
+                      <i class="material-icons right">more_vert</i>
+                    </span>
+                  </div>
+                  <div class="card-action">
+                    <%= link_to t("buttons.read_more"), tour,
+                      class: "waves-effect waves-green btn red right" %>
+                  </div>
+                  <div class="card-reveal">
+                      <span class="card-title grey-text text-darken-4">
+                        <%= tour.name %>
+                        <i class="material-icons right">close</i>
+                      </span>
+                    <p><%= raw tour.content %></p>
+                  </div>
+                </div>
+              </div>
+            </li>
+          <% end %>
+        </ul>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<div class="parallax-container valign-wrapper">
+  <div class="section no-pad-bot">
+    <div class="container">
+      <div class="row center">
+        <h5 class="header col s12 light">
+          <%= t "we_provide_the_best" %>
+        </h5>
+      </div>
+    </div>
+  </div>
+  <div class="parallax">
+    <img src="http://urinx.github.io/v5/img/background3.jpg" >
+  </div>
+</div>
+
 <div class="container">
   <div class="section">
     <div class="row">

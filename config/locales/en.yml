@@ -140,3 +140,6 @@ en:
       remove_tour_item: "Cannot remove anymore"
   datepicker:
     format: "dd-mm-yyyy"
+  static_pages:
+    home:
+      discover_our_tour: "Discover our tours"

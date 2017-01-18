@@ -12,6 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require bxslider
 //= require turbolinks
 //= require_tree .
 //= require materialize-sprockets
@@ -28,6 +29,16 @@ $(document).on('turbolinks:load', function() {
   });
 
   Materialize.updateTextFields();
+
+  $('.bxslider').bxSlider({
+    auto: true,
+    stopAutoOnClick: true,
+    speed: 1000,
+    pause: 6000,
+    minSlides: 3,
+    maxSlides: 3,
+    slideWidth: 400
+  });
 
   $('.modal').modal();
 

@@ -1,5 +1,6 @@
 class StaticPagesController < ApplicationController
   def show
+    @tours = Tour.newest_tours
     if valid_page_name?
       if valid_page_name?
         render template: "static_pages/#{params[:page_name]}"

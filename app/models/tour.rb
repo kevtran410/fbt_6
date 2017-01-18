@@ -19,4 +19,6 @@ class Tour < ApplicationRecord
     reject_if: lambda {|attribute| attribute[:place_id].blank?}
 
   ratyrate_rateable "quality"
+
+  scope :newest_tours, ->{order(created_at: :desc).limit(5)}
 end
