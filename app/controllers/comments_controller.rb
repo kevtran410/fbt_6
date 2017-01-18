@@ -44,7 +44,7 @@ class CommentsController < ApplicationController
   def comment_params
     params.require(:comment).permit :content, :review_id, :user_id, :parent_id
   end
-
+  
   def load_supports
     @supports = Supports::ReviewSupport.new review: @review, user: current_user,
       parent_id: params[:parent_id]
