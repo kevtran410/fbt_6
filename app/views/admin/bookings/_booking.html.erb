@@ -1,0 +1,14 @@
+<tr>
+  <%= form_for [:admin, booking] do |f| %>
+    <td><%= booking.email %></td>
+    <td><%= booking.phone %></td>
+    <td><%= booking.status %></td>
+    <td><%= booking.tour_option.tour.name %></td>
+    <td><%= booking.tour_option.start_date %></td>
+    <td><%= f.submit t("buttons.accept"), class: "btn blue btn-accept" %></td>
+    <td>
+      <%= link_to t("buttons.decline"), "#", class: "btn red btn-decline" %>
+    </td>
+    <%= hidden_field_tag :accept %>
+  <% end %>
+</tr>

@@ -74,6 +74,13 @@ en:
         confirm_delete: "Are you sure you want to delete this tour?"
       index:
         new_tour: "Create new tour"
+    bookings:
+      index:
+        email: "Email"
+        phone: "Phone"
+        status: "Status"
+        tour: "Tour"
+        tour_option: "Option:"
   buttons:
     sign_up: "Sign up"
     profile: "Profile"
@@ -92,6 +99,9 @@ en:
     remove: "Remove"
     delete: "Delete"
     edit: "Edit"
+    book: "Book"
+    accept: "Accept"
+    decline: "Decline"
   flash:
     access_denied: "Access denied."
     place:
@@ -114,6 +124,11 @@ en:
       create_success: "Create new tour successfully"
       update_success: "Updated tour successfully"
       find_fail: "Tour not found"
+    bookings:
+      create_success: "Your request have been saved"
+      create_failed: "Something went wrong, please try again later!"
+      decline_success: "Declined a request successfully"
+      accept_success: "Accepted a request successfully"
   tours:
     show:
       create_review: "Create new review"
@@ -143,3 +158,8 @@ en:
   static_pages:
     home:
       discover_our_tour: "Discover our tours"
+  bookings:
+    form:
+      email: "Email:"
+      phone: "Phone:"
+      person_num: "Number of people:"

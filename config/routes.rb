@@ -10,6 +10,7 @@ Rails.application.routes.draw do
     resources :places, except: :show
     get "places/new/(:parent_id)", to: "places#new", as: "new_child_place"
     resources :tours
+    resources :bookings, only: [:index, :update]
   end
 
   resources :tours, only: :show do
@@ -20,4 +21,5 @@ Rails.application.routes.draw do
         as: :show_sub_comment
     end
   end
+  resources :bookings, only: :create
 end
