@@ -1,4 +1,6 @@
 class StaticPagesController < ApplicationController
+  layout "out_container"
+
   def show
     @tours = Tour.newest_tours
     if valid_page_name?

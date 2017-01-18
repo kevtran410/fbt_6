@@ -27,7 +27,10 @@
 <div>
   <div class="section">
     <div class="row">
-      <h3 class="center brown-text"><%= t ".discover_our_tour" %></h3>
+      <h3 class="center">
+        <%= link_to t(".discover_our_tour"), tours_path,
+          class: "brown-text" %>
+      </h3>
     </div>
     <div class="row">
       <% if @tours.any? %>
