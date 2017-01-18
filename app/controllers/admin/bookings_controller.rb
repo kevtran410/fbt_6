@@ -7,8 +7,10 @@ class Admin::BookingsController < ApplicationController
   def update
     if params[:accept].nil?
       @booking.declined!
+      flash[:success] = t "flash.bookings.decline_success"
     else
       @booking.accepted!
+      flash[:success] = t "flash.bookings.accept_success"
     end
     redirect_to :back
   end

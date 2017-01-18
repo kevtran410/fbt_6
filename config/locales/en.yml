@@ -127,6 +127,8 @@ en:
     bookings:
       create_success: "Your request have been saved"
       create_failed: "Something went wrong, please try again later!"
+      decline_success: "Declined a request successfully"
+      accept_success: "Accepted a request successfully"
   tours:
     show:
       create_review: "Create new review"
