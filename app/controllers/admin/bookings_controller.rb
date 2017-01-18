@@ -12,6 +12,7 @@ class Admin::BookingsController < ApplicationController
       @booking.accepted!
       flash[:success] = t "flash.bookings.accept_success"
     end
+    BookingMailer.notify_mail(@booking).deliver_later
     redirect_to :back
   end
 end

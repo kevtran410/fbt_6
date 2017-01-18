@@ -1,0 +1,7 @@
+<%= t "mailer.dear", name: @booking.user.name %>
+<br>
+<%= t "mailer.#{@booking.status}_message" %>
+<br>
+<%= link_to t("mailer.#{@booking.status}_link_text"), "#" %>
+<br>
+<%= t "mailer.best_regard" %>
