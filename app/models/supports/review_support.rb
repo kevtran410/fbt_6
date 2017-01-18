@@ -15,6 +15,10 @@ class Supports::ReviewSupport
       @parent_comment.children.build : @review.comments.build
   end
 
+  def like
+    @like = @review.likes.find_by(user: @user) || @review.likes.build
+  end
+
   def parent_comment
     @parent_comment
   end

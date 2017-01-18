@@ -1,0 +1,13 @@
+<% if current_user.liked? @review %>
+  <%= link_to tour_review_like_path(@tour, @review, @supports.like),
+    class: "btn btn-large waves-effect blue",
+    remote: true, method: :delete do %>
+    <i class="material-icons left">thumb_down</i><%= t "buttons.unlike" %>
+  <% end %>
+<% else %>
+  <%= link_to tour_review_likes_path(@tour, @review),
+    class: "btn btn-large waves-effect blue",
+    remote: true, method: :post do %>
+    <i class="material-icons left">thumb_up</i><%= t "buttons.like" %>
+  <% end %>
+<% end %>
