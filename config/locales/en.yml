@@ -107,6 +107,7 @@ en:
     decline: "Decline"
     unlike: "Unlike"
     pay_with_card: "Pay with card"
+    search: "Search"
   flash:
     access_denied: "Access denied."
     place:
@@ -148,6 +149,14 @@ en:
     tour_card:
       duration: "days"
       reviews_count: "reviews"
+    search_form:
+      search_value: "Search"
+      search_value_price: "Price"
+      search_value_price_from: "From"
+      search_value_price_to: "to"
+      search_value_place: "Place"
+      search_value_start_date: "Start date"
+      where_to_go: "Where to go"
   reviews:
     new:
       review_name: "Review title:"
