@@ -1,0 +1,7 @@
+<%= search_form_for @search_places, url: admin_places_path do |f| %>
+  <div class="input-field" style="margin-top: -10px">
+    <%= f.label :name_cont, "Search ..." %>
+    <%= f.text_field :name_cont %>
+  </div>
+<% end %>
+

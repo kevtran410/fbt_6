@@ -9,7 +9,7 @@
       <div class="row">
         <h4 class="right">
           <strong>
-            <%= pluralize @tours.size, t(".sub_slogan_tour_list_show") %>
+            <%= pluralize @tours_count, t(".sub_slogan_tour_list_show") %>
           </strong>
         </h4>
       </div>
@@ -41,6 +41,10 @@
       <% @tours.each do |tour| %>
         <%= render "tours/tour_card", tour: tour %>
       <% end %>
+    <% else %>
+      <div class="card-panel red white-text center">
+        <p><%= t ".not_found" %></p>
+      </div>
     <% end %>
   </div>
 </div>

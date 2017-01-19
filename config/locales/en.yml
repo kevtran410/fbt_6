@@ -142,10 +142,19 @@ en:
   tours:
     show:
       create_review: "Create new review"
+      description: "DESCRIPTION"
+      rating: "Rating:"
+      tour_name: "About %{tour_name}"
+      reviews: "Reviews"
+      duration: "Minimum stay:"
+      price: "Price:"
+      location: "Locations:"
+      days: "days"
     index:
       slogan_tour_list_show: "Plan Your Perfect Adventure"
       sub_slogan_tour_list_show: "tours available"
       nunc_cursus: "Nunc cursus libero purus ac congue ar lorem cursus ut sed pulvinar massa idend porta nequetiam"
+      not_found: "NO THING TO SHOW"
     tour_card:
       duration: "days"
       reviews_count: "reviews"

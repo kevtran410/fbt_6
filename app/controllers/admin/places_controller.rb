@@ -1,5 +1,5 @@
 class Admin::PlacesController < ApplicationController
-  load_and_authorize_resource except: [:index, :new]
+  load_and_authorize_resource
 
   rescue_from ActiveRecord::RecordNotFound do
     flash[:danger] = t "flash.place.find_fail"
@@ -7,7 +7,9 @@ class Admin::PlacesController < ApplicationController
   end
 
   def index
-    @places = Place.hash_tree
+    # @places = Place.hash_tree
+    @search_places = Place.ransack params[:q]
+    @places = @search_places.result.hash_tree
   end
 
   def new

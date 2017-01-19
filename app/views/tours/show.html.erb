@@ -1,28 +1,110 @@
-<div class="row">
-  <%= render "bookings/form", tour: @tour, booking: @booking %>
-</div>
-
-<div class="row">
-  <%= link_to t(".create_review"), new_tour_review_path(@tour),
-    class: "btn right" %>
-</div>
-
-<div class="row">
-  <ul class="collapsible" data-collapsible="expandable">
-    <% if @tour.reviews.any? %>
-      <% @tour.reviews.each do |review| %>
-        <li>
-          <div class="collapsible-header">
-            <h5><%= review.name %></h5>
-            <h6><%= review.user.name %></h6>
+<div class="row ">
+  <div class="col s9">
+    <div class="row show-on-medium">
+      <ul class="bxslider-tour-details">
+        <li><img src="http://urinx.github.io/v5/img/background1.jpg"/></li>
+        <li><img src="http://urinx.github.io/v5/img/background2.jpg"/></li>
+        <li><img src="http://urinx.github.io/v5/img/background3.jpg"/></li>
+      </ul>
+    </div>
+    <div class="row">
+      <div class="col s12">
+        <ul class="tabs">
+          <li class="tab col s3">
+            <a class="active" href="#description-tab"><%= t ".description" %></a>
+          </li>
+        </ul>
+      </div>
+      <div id="description-tab" class="col s12">
+        <br>
+        <div class="row">
+          <div>
+            <div class="col s5 offset-s7">
+              <div class="col s6 brown-text review-name-text">
+                <%= t ".rating" %>
+                <br>
+                <%= t ".duration" %>
+                <br>
+                <%= t ".price" %>
+                <br>
+                <%= t ".location" %>
+              </div>
+              <div class="col s6 brown-text review-name-text">
+                <%= rating_for @tour, "quality", disable_after_rate: true %>
+                <%= pluralize @tour.duration, t(".days") %>
+                <br>
+                <%= number_to_currency @tour.price %>
+              </div>
+            </div>
           </div>
-          <div class="collapsible-body">
-            <%= link_to t("buttons.read_more"), tour_review_path(@tour, review),
-              class: "btn right" %>
-            <%= raw review.content %>
-          </div>
-        </li>
-      <% end %>
-    <% end %>
-  </ul>
+        </div>
+        <div class="row">
+          <h5 class="brown-text">
+            <%= t(".tour_name", tour_name: @tour.name) %>
+          </h5>
+          <%= raw @tour.content %>
+        </div>
+      </div>
+      <section class="col s12 divider"></section>
+      <div id="reviews-tab" class="col s12">
+        <br>
+        <div class="row">
+          <strong>
+            <%= pluralize @tour.reviews.size, t(".reviews") %>
+          </strong>
+          <%= link_to t(".create_review"), new_tour_review_path(@tour),
+            class: "btn right" %>
+        </div>
+        <div class="row">
+          <ul class="collapsible popout" data-collapsible="expandable">
+            <% if @tour.reviews.any? %>
+              <% @tour.reviews.each do |review| %>
+                <li>
+                  <div class="collapsible-header card horizontal">
+                    <div class="review-user col s2">
+                      <center>
+                        <img class="image-circle" src="http://urinx.github.io/v5/img/background3.jpg">
+                      </center>
+                      <center><%= review.user.name %></center>
+                    </div>
+                    <div class="card-stacked col s10">
+                      <div class="card-content">
+                        <p class="blue-text review-name-text">
+                          <%= link_to review.name,
+                            tour_review_path(@tour, review) %>
+                        </p>
+                        <p>
+                          <%= truncate strip_tags(review.content),
+                            length: Settings.tour_card_content_length %>
+                        </p>
+                      </div>
+                      <div class="card-action">
+                        <%= review.created_at %>
+                        <%= link_to t("buttons.read_more"),
+                          tour_review_path(@tour, review), class: "right" %>
+                      </div>
+                    </div>
+
+                  </div>
+                  <div class="collapsible-body">
+                    <%= raw review.content %>
+                  </div>
+                </li>
+              <% end %>
+            <% end %>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col s3">
+    <div class=" row">
+      <div class="booking-form">
+        <div class="col s12 card">
+          <%= render "bookings/form", tour: @tour, booking: @booking %>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

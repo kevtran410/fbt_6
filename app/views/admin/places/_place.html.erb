@@ -1,5 +1,15 @@
-<%= link_to place.name, edit_admin_place_path(place) %>
-<%= link_to t(".new_child_place"), admin_new_child_place_path(place) %>
-<%= link_to t(".delete_place"), [:admin, place], method: :delete,
-  data: {confirm: t(".confirm_delete")}%>
-<br>
+<div class="collection">
+  <div class="collection-item">
+    <%= link_to place.name, edit_admin_place_path(place) %>
+    <%= link_to [:admin, place], method: :delete,
+      data: {confirm: t(".confirm_delete")},
+      class: "btn btn-flat red white-text right btn-delete-place" do %>
+      <i class="material-icons">delete</i>
+    <% end %>
+    <%= link_to admin_new_child_place_path(place),
+      class: "btn btn-flat green white-text right btn-add-place" do %>
+      <i class="material-icons">add</i>
+    <% end %>
+    <br>
+  </div>
+</div>

@@ -40,6 +40,15 @@ $(document).on('turbolinks:load', function() {
     slideWidth: 400
   });
 
+  $('.bxslider-tour-details').bxSlider({
+    auto: true,
+    stopAutoOnClick: true,
+    speed: 1000,
+    pause: 6000
+  });
+
+  $('ul.tabs').tabs();
+
   $('.modal').modal();
 
   $('.admin-tour-form').on('click', '.btn-add-field', function (e) {

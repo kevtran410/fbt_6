@@ -56,8 +56,8 @@ p {
   display: inline-block;
   text-align: center;
   vertical-align: middle;
-  width: 160px;
-  height: 50px;
+  width: 140px;
+  height: 40px;
   padding-top: 10px;
   background: #3b5998;
   font-family: 'Open Sans', sans-serif;
@@ -80,29 +80,20 @@ p {
 .facebook:before {
   content: "\0000a0";
   display: inline-block;
-  height: 50px;
-  width: 45px;
-  line-height: 24px;
-  margin: 0 4px -6px -4px;
+  height: 40px;
+  width: 30px;
   position: relative;
-  padding-left: 10px;
   top: -10px;
-  left: -10px;
-  background: url("http://i.imgur.com/0bcxkOD.png") no-repeat center center #37528c;
+  background: url("http://i.imgur.com/0bcxkOD.png") no-repeat center center;
   background-size: 13px 24px;
-  -webkit-border-radius: 8px 0px 0px 8px;
-  -moz-border-radius: 8px 0px 0px 8px;
-  -o-border-radius: 8px 0px 0px 8px;
-  -ms-border-radius: 8px 0px 0px 8px;
-  border-radius: 8px 0px 0px 8px;
 }
 
 .google {
   display: inline-block;
   text-align: center;
   vertical-align: middle;
-  width: 160px;
-  height: 50px;
+  width: 140px;
+  height: 40px;
   padding-top: 10px;
   background: #d34836;
   font-family: 'Open Sans', sans-serif;
@@ -125,21 +116,12 @@ p {
 .google:before {
   content: "\0000a0";
   display: inline-block;
-  height: 50px;
-  width: 45px;
-  line-height: 24px;
-  margin: 0 4px -6px -4px;
+  height: 40px;
+  width: 30px;
   position: relative;
-  padding-left: 10px;
   top: -10px;
-  left: -15px;
-  background: url("http://i.imgur.com/GxFF74f.png") no-repeat center center #c74534;
+  background: url("http://i.imgur.com/GxFF74f.png") no-repeat center center;
   background-size: 24px 24px;
-  -webkit-border-radius: 8px 0px 0px 8px;
-  -moz-border-radius: 8px 0px 0px 8px;
-  -o-border-radius: 8px 0px 0px 8px;
-  -ms-border-radius: 8px 0px 0px 8px;
-  border-radius: 8px 0px 0px 8px;
 }
 
 .comment-content {
@@ -174,4 +156,39 @@ p {
 
 .btn-search {
   width: 100%;
+}
+
+.booking-form {
+  position: fixed;
+  top: 100px;
+}
+
+.image-circle {
+  border-radius: 50%;
+  height: 100px;
+  width: 100px;
+}
+
+.review-user {
+  margin-top: 15px;
+}
+
+.review-name-text {
+  font-size: 20px;
+}
+
+.btn-delete-place {
+  margin-left: 10px;
+}
+
+.place-button {
+
+}
+
+.child-place {
+  margin-left: 40px;
+}
+
+.collection {
+  box-shadow: #2E2F30 ;
 }

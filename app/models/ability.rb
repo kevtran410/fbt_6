@@ -5,6 +5,9 @@ class Ability
     user ||= User.new
     if user.is_admin?
       can :manage, [Place, Tour, Booking]
+      can :manage, Review
+      can :manage, Comment
+      can :manage, Like
     else
       can :manage, Review
       can :manage, Comment
