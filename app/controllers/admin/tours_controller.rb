@@ -29,6 +29,7 @@ class Admin::ToursController < ApplicationController
   end
 
   def edit
+    @places = Place.all
   end
 
   def update
