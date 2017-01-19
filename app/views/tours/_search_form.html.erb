@@ -1,0 +1,83 @@
+<%= search_form_for @search do |f| %>
+  <div class="collection">
+    <div class="collection-item">
+      <div class="input-field">
+        <%= f.label :name_cont, t(".search_value")  %>
+        <%= f.text_field :name_cont %>
+      </div>
+    </div>
+  </div>
+  <div>
+    <ul class="collapsible" data-collapsible="expandable">
+      <li>
+        <div class="collapsible-header">
+          <i class="material-icons">euro_symbol</i>
+          <%= t ".search_value_price" %>
+        </div>
+        <div class="collapsible-body">
+          <br>
+          <div class="container">
+            <div class="row">
+              <div class="range-label">
+                <%= t ".search_value_price_from" %>
+              </div>
+              <div class="range-field">
+                <%= f.range_field :price_gteq,
+                  value: Settings.search_price_min,
+                  min: Settings.search_price_min,
+                  max: Settings.search_price_max %>
+              </div>
+            </div>
+            <div class="row">
+              <div class="range-label">
+                <%= t ".search_value_price_to" %>
+              </div>
+              <div class="range-field">
+                <%= f.range_field :price_lteq,
+                  value: Settings.search_price_max,
+                  min: Settings.search_price_min,
+                  max: Settings.search_price_max %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </li>
+      <li>
+        <div class="collapsible-header">
+          <i class="material-icons">place</i>
+          <%= t ".search_value_place" %>
+        </div>
+        <div class="collapsible-body">
+          <div class="container">
+            <div class="input-field">
+              <%= f.label :places_name_cont, t(".where_to_go") %>
+              <%= f.text_field :places_name_cont %>
+            </div>
+          </div>
+        </div>
+      </li>
+      <li>
+        <div class="collapsible-header">
+          <i class="material-icons">view_headline</i>
+          <%= t ".search_value_start_date" %>
+        </div>
+        <div class="collapsible-body">
+          <div class="container">
+            <div class="input-field">
+              <%= f.label t ".search_value_price_from" %>
+              <%= f.date_field :tour_options_start_date_gteq, class: "datepicker" %>
+            </div>
+            <div class="input-field">
+              <%= f.label t ".search_value_price_to" %>
+              <%= f.date_field :tour_options_start_date_lteq, class: "datepicker" %>
+            </div>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div>
+    <%= f.submit t("buttons.search"),
+      class: "btn btn-flat red white-text right btn-search" %>
+  </div>
+<% end %>
