@@ -4,10 +4,14 @@ class BookingsController < ApplicationController
   def create
     if current_user.bookings << @booking
       flash[:success] = t "flash.bookings.create_success"
+      redirect_to @booking
     else
       flash[:danger] = t "flash.bookings.create_failed"
+      redirect_to :back
     end
-    redirect_to :back
+  end
+
+  def show
   end
 
   private

@@ -22,5 +22,6 @@ Rails.application.routes.draw do
         as: :show_sub_comment
     end
   end
-  resources :bookings, only: :create
+  resources :bookings, only: [:show, :create]
+  resources :charges, only: [:create, :update]
 end
