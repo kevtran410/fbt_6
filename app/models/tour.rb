@@ -10,7 +10,7 @@ class Tour < ApplicationRecord
   validates :price, presence: true, numericality: true
 
   ATTRIBUTE_PARAMS = [:name, :duration, :price, :content,
-    tour_options_attributes: [:id, :person_quantity, :start_date, :_destroy],
+    tour_options_attributes: [:id, :person_quantity, :start_date, :status, :_destroy],
     tour_places_attributes: [:id, :place_id, :_destroy]]
 
   accepts_nested_attributes_for :tour_options, allow_destroy: true,

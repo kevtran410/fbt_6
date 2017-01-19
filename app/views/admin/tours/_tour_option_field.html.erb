@@ -3,6 +3,7 @@
     <%= f.label :person_quantity, "number of people" %>
     <%= f.text_field :person_quantity %>
     <%= f.date_field :start_date, class: "datepicker" %>
+    <%= f.select :status, TourOption.statuses.keys %>
     <%= f.hidden_field :_destroy %>
     <span class="btn red btn-remove-field">
       <%= t "buttons.remove" %>
