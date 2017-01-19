@@ -140,6 +140,13 @@ en:
   tours:
     show:
       create_review: "Create new review"
+    index:
+      slogan_tour_list_show: "Plan Your Perfect Adventure"
+      sub_slogan_tour_list_show: "tours available"
+      nunc_cursus: "Nunc cursus libero purus ac congue ar lorem cursus ut sed pulvinar massa idend porta nequetiam"
+    tour_card:
+      duration: "days"
+      reviews_count: "reviews"
   reviews:
     new:
       review_name: "Review title:"

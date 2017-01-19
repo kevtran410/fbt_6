@@ -1,0 +1,33 @@
+<div class="col s12">
+  <div class="card horizontal">
+    <div class="card-image col s4">
+      <img class="tour-card-img"
+        src="http://noticeapp.co/ca/img/background3.jpg">
+    </div>
+    <div class="card-stacked col s8">
+      <div class="card-content">
+        <span class="card-title grey-text text-darken-4">
+          <%= tour.name %>
+          <p class="right orange-text"><%= number_to_currency tour.price %></p>
+        </span>
+        <span class="grey-text text-darken-5">
+          <h6><%= pluralize tour.duration, t(".duration") %></h6>
+        </span>
+        <span class="grey-text text-darken-5">
+          <h6>
+            <%= truncate strip_tags(tour.content),
+              length: Settings.tour_card_content_length %>
+          </h6>
+        </span>
+      </div>
+      <div class="card-action">
+        <div class="row">
+          <%= rating_for tour, "quality" %>
+          <%= pluralize tour.reviews.size, t(".reviews_count") %>
+          <%= link_to t("buttons.read_more"), tour,
+            class: "waves-effect waves-green btn red right" %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

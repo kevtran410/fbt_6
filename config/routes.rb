@@ -13,7 +13,7 @@ Rails.application.routes.draw do
     resources :bookings, only: [:index, :update]
   end
 
-  resources :tours, only: :show do
+  resources :tours, only: [:index, :show] do
     resources :reviews do
       resources :comments, only: :create
       resources :likes, only: [:create, :destroy]

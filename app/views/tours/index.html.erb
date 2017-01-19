@@ -1,0 +1,54 @@
+<div class="parallax-container">
+  <div class="section no-pad-bot">
+    <div class="container">
+      <div class="row">
+        <h2 class="right text-lighten-2">
+          <%= t ".slogan_tour_list_show" %>
+        </h2>
+      </div>
+      <div class="row">
+        <h4 class="right">
+          <strong>
+            <%= pluralize @tours.size, t(".sub_slogan_tour_list_show") %>
+          </strong>
+        </h4>
+      </div>
+    </div>
+  </div>
+  <div class="parallax">
+    <img src="http://i.kinja-img.com/gawker-media/image/upload/t_original/951820009082492817.jpg">
+  </div>
+</div>
+<div class="row">
+  <div class="center">
+    <h4>
+      <%= link_to t(".discover_our_tour"), tours_path,
+        class: "brown-text" %>
+    </h4>
+    <h6 class="brown-text">
+      <%= t ".nunc_cursus" %>
+    </h6>
+  </div>
+  <br>
+  <section class="container divider"></section>
+</div>
+<div class="row">
+  <div class="col s3">
+    <div class="collection">
+      <div class="collection-item">
+        <div>
+          <a href="#!" class="secondary-content">
+            <i class="material-icons">search</i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col s9">
+    <% if @tours.any? %>
+      <% @tours.each do |tour| %>
+        <%= render "tours/tour_card", tour: tour %>
+      <% end %>
+    <% end %>
+  </div>
+</div>
